@@ -102,7 +102,8 @@ h1 em{font-style:normal;color:var(--red)}
 /* ---------- 通用段 ---------- */
 section.blk{padding:104px 0}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:46px}
-.nat{margin:0 auto 46px;width:560px;max-width:100%}
+.head.vis{align-items:center}
+.nat{margin:0 0 0 auto;width:340px;flex:0 0 auto}
 .nat img{display:block;width:100%;height:auto}
 .head .t{font-size:var(--fs-md);letter-spacing:.26em;color:var(--red);margin-bottom:14px;font-weight:500}
 .head h2{font-size:var(--fs-2xl);font-weight:600;letter-spacing:-.01em;line-height:1.35}
@@ -361,8 +362,10 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
 /* 產品分類主視覺 */
 @media (max-width:1080px){
   .head .more{display:none}
-  .nat{width:500px;margin-bottom:40px}
+  .head.vis{flex-direction:row;align-items:center}
+  .nat{width:250px;margin:0 0 0 auto}
 }
 @media (max-width:680px){
-  .nat{width:100%;margin-bottom:32px}
+  .head.vis{flex-direction:column;align-items:flex-start}
+  .nat{width:86%;max-width:100%;margin:0 0 28px auto}
 }
