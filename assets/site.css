@@ -368,4 +368,5 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
 @media (max-width:680px){
   .head.vis{flex-direction:column;align-items:flex-start}
   .nat{width:86%;max-width:100%;margin:0 0 28px auto}
+  #products{scroll-margin-top:20px}
 }
