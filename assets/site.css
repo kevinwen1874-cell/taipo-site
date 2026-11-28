@@ -105,7 +105,7 @@ h1 em{font-style:normal;color:var(--red)}
 .hero .side img.wanxia{width:286px;max-width:none;filter:drop-shadow(0 28px 34px rgba(58,42,20,.16));animation:float 6s ease-in-out infinite}
 
 /* ---------- 首屏小輪播（丸俠圖下方） ---------- */
-.hslide{position:relative;width:286px;max-width:100%;margin-top:10px;border-radius:12px;overflow:hidden;border:1px dashed #D6CAB4;background:linear-gradient(135deg,#F3EADA 0%,#EFE5D3 55%,#F5ECDC 100%)}
+.hslide{position:relative;width:286px;max-width:100%;margin-top:6px;border-radius:12px;overflow:hidden;border:1px dashed #D6CAB4;background:linear-gradient(135deg,#F3EADA 0%,#EFE5D3 55%,#F5ECDC 100%)}
 .htrack{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .hcell{flex:0 0 100%;aspect-ratio:3/1}
 .hnav{position:absolute;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;padding:0;transition:.2s;z-index:2}
