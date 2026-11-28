@@ -73,6 +73,10 @@ nav a.on::after{width:100%;background:var(--ink)}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--red)}
 h1{font-size:var(--fs-display);line-height:1.22;letter-spacing:-.01em;font-weight:600}
 h1 em{font-style:normal;color:var(--red)}
+/* 主視覺藝術字：招牌貼紙 */
+.claim{margin:20px 0 0;max-width:500px}
+.claim svg{display:block;width:100%;height:auto;overflow:visible}
+
 .hero p.lead{margin-top:24px;font-size:var(--fs-sm);color:var(--ink-2);max-width:560px;line-height:1.95;text-wrap:pretty}
 .cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;font-size:var(--fs-sm);letter-spacing:.04em;border-radius:100px;transition:.24s}
@@ -147,7 +151,7 @@ section.blk{padding:104px 0}
 .card:hover .go{background:var(--ink);color:#FBF8F2;border-color:var(--ink)}
 
 /* ---------- 三欄服務 ---------- */
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.trio{display:grid;grid-template-columns:repeat(2,1fr);gap:48px}
 .srv{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;transition:.28s}
 .srv:hover{border-color:#D8CBB5;box-shadow:0 18px 36px -24px rgba(58,42,20,.28)}
 .srv .ic{width:44px;height:44px;border-radius:12px;background:var(--paper-2);display:grid;place-items:center;margin-bottom:20px}
@@ -288,6 +292,7 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .hero .wrap{gap:6px;padding-bottom:40px}
   .eyebrow{margin-bottom:18px}
   h1{font-size:var(--fs-display);line-height:1.32}
+  .claim{margin-top:16px;max-width:100%}
   .hero p.lead{margin-top:18px;line-height:1.85}
   .cta{margin-top:26px;gap:10px}
   .btn{padding:13px 22px}
