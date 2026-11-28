@@ -88,6 +88,26 @@
   </div>
 </section>
 
+<!-- 活動輪播 -->
+<section class="pslider" aria-label="現行活動">
+  <div class="wrap">
+    <div class="pswrap">
+      <div class="pslides" id="pslides">
+        <div class="pslide" role="group" aria-label="活動圖 1"></div>
+        <div class="pslide" role="group" aria-label="活動圖 2"></div>
+        <div class="pslide" role="group" aria-label="活動圖 3"></div>
+      </div>
+      <button class="psnav prev" id="psPrev" aria-label="上一張">
+        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="psnav next" id="psNext" aria-label="下一張">
+        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="psdots" id="psDots"></div>
+  </div>
+</section>
+
 <!-- 事實 -->
 <div class="facts">
   <div class="wrap">
@@ -296,6 +316,32 @@ var io = new IntersectionObserver(function(es){
 document.querySelectorAll('.rise').forEach(function(el,i){
   el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el);
 });
+</script>
+
+<script>
+(function(){
+  var track=document.getElementById('pslides'), dots=document.getElementById('psDots');
+  if(!track) return;
+  var n=track.children.length, i=0, timer=null;
+  for(var k=0;k<n;k++){
+    var d=document.createElement('button');
+    d.setAttribute('aria-label','第 '+(k+1)+' 張');
+    (function(idx){ d.addEventListener('click', function(){ go(idx); rest(); }); })(k);
+    dots.appendChild(d);
+  }
+  function paint(){
+    track.style.transform='translateX(-'+(i*100)+'%)';
+    for(var k=0;k<n;k++) dots.children[k].className = (k===i?'on':'');
+  }
+  function go(x){ i=(x+n)%n; paint(); }
+  function rest(){ clearInterval(timer); if(n>1) timer=setInterval(function(){ go(i+1); }, 5000); }
+  document.getElementById('psPrev').addEventListener('click', function(){ go(i-1); rest(); });
+  document.getElementById('psNext').addEventListener('click', function(){ go(i+1); rest(); });
+  var box=track.parentNode;
+  box.addEventListener('mouseenter', function(){ clearInterval(timer); });
+  box.addEventListener('mouseleave', rest);
+  paint(); rest();
+})();
 </script>
 
 <script>
