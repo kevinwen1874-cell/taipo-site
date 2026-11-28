@@ -73,9 +73,11 @@ nav a.on::after{width:100%;background:var(--ink)}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--red)}
 h1{font-size:var(--fs-display);line-height:1.22;letter-spacing:-.01em;font-weight:600}
 h1 em{font-style:normal;color:var(--red)}
-/* 主視覺藝術字：招牌貼紙 */
-.claim{margin:20px 0 0;max-width:500px}
-.claim svg{display:block;width:100%;height:auto;overflow:visible}
+/* 主視覺標語：手寫楷 + 手繪紅線 */
+@font-face{font-family:"Iansui Sub";src:url("fonts/iansui_subset.woff2") format("woff2");font-weight:400;font-display:swap}
+.claim{position:relative;display:inline-block;margin:20px 0 0;padding-bottom:10px;transform:rotate(-1.2deg);transform-origin:left center}
+.claim span{font-family:"Iansui Sub","PingFang TC","Microsoft JhengHei",serif;font-size:36px;line-height:1.28;letter-spacing:.05em;color:var(--ink);-webkit-text-stroke:.45px var(--ink)}
+.claim-u{position:absolute;left:2%;bottom:0;width:96%;height:9px;overflow:visible}
 
 .hero p.lead{margin-top:24px;font-size:var(--fs-sm);color:var(--ink-2);max-width:560px;line-height:1.95;text-wrap:pretty}
 .cta{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
@@ -293,6 +295,7 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .eyebrow{margin-bottom:18px}
   h1{font-size:var(--fs-display);line-height:1.32}
   .claim{margin-top:16px;max-width:100%}
+  .claim span{font-size:26px;-webkit-text-stroke:.3px var(--ink)}
   .hero p.lead{margin-top:18px;line-height:1.85}
   .cta{margin-top:26px;gap:10px}
   .btn{padding:13px 22px}
