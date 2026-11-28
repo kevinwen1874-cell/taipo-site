@@ -86,7 +86,7 @@ h1 em{font-style:normal;color:var(--red)}
 .hero .side{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:530px;gap:4px}
 .brandline{display:flex;align-items:center;justify-content:center;gap:30px;margin-bottom:16px}
 .hero .side img.sign{width:154px;opacity:.96}
-.hero .side img.bbm{width:132px;opacity:.94}
+.hero .side img.bbm{width:132px}
 .hero .side img.wanxia{width:468px;max-width:none;filter:drop-shadow(0 28px 34px rgba(58,42,20,.16));animation:float 6s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
@@ -102,6 +102,8 @@ h1 em{font-style:normal;color:var(--red)}
 /* ---------- 通用段 ---------- */
 section.blk{padding:104px 0}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:46px}
+.nat{margin:0 auto 46px;width:560px;max-width:100%}
+.nat img{display:block;width:100%;height:auto}
 .head .t{font-size:var(--fs-md);letter-spacing:.26em;color:var(--red);margin-bottom:14px;font-weight:500}
 .head h2{font-size:var(--fs-2xl);font-weight:600;letter-spacing:-.01em;line-height:1.35}
 .head p{color:var(--muted);font-size:var(--fs-sm);margin-top:10px}
@@ -227,7 +229,7 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
 
 
 /* ---------- 丸俠字標 ---------- */
-.bbm-lock{width:148px;margin-bottom:20px;display:block;background:#FBF8F2;padding:10px 16px;border-radius:12px}
+.bbm-lock{width:148px;margin-bottom:20px;display:block}
 
 /* ---------- 全部產品頁 ---------- */
 .catbar{position:sticky;top:78px;z-index:50;background:rgba(251,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -354,4 +356,13 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .grid{grid-template-columns:1fr}
   .hero .side img.wanxia{width:240px}
   .fgrid{grid-template-columns:1fr}
+}
+
+/* 產品分類主視覺 */
+@media (max-width:1080px){
+  .head .more{display:none}
+  .nat{width:500px;margin-bottom:40px}
+}
+@media (max-width:680px){
+  .nat{width:100%;margin-bottom:32px}
 }
