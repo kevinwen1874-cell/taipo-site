@@ -15,7 +15,7 @@
 <header>
   <div class="wrap">
     <a href="index.html" class="logo"><img src="assets/logo_official.png" alt="大埔振興丸"></a>
-    <nav><a href="index.html">首頁</a><a href="products.html" class="on">全部產品</a><a href="index.html#wanxia">丸俠</a><a href="index.html#service">在家食譜</a><a href="index.html#service">開心片段</a><a href="index.html#service">批發服務</a></nav>
+    <nav><a href="index.html">首頁</a><a href="products.html" class="on">全部產品</a><a href="index.html#wanxia">丸俠</a><a href="index.html#service">在家食譜</a><a href="index.html#service">開心片段</a></nav>
     <div class="act">
       <label class="search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
@@ -37,7 +37,6 @@
   <a href="index.html#wanxia">丸俠</a>
   <a href="index.html#service">在家食譜</a>
   <a href="index.html#service">開心片段</a>
-  <a href="index.html#service">批發服務</a>
   <div class="mcta"><a href="products.html">選購產品</a><a href="index.html#member">會員登入</a></div>
   <div class="mfoot">香港製造 · 零添加 · 始創一九六七</div>
 </div>
@@ -50,7 +49,7 @@
     <div class="head" style="margin-bottom:0">
       <div>
         <div class="t">產品目錄</div>
-        <h1 style="font-size:42px;font-weight:600;line-height:1.3">全部產品</h1>
+        <h1 style="font-size:var(--fs-3xl);font-weight:600;line-height:1.3">全部產品</h1>
         <p>79 款，分 10 類。圖片、淨重與價格全部對應官網現售版本。</p>
       </div>
     </div>
@@ -472,6 +471,31 @@
   });
   m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
   window.addEventListener('resize', function(){ if(window.innerWidth>1080) close(); });
+})();
+</script>
+<script>
+/* 分類篩選條：滾動時標示當前分組，點擊即時反饋 */
+(function(){
+  var bar=document.querySelector('.catbar'), chips=[].slice.call(bar.querySelectorAll('a'));
+  var groups=chips.map(function(c){ return document.querySelector(c.getAttribute('href')); });
+  var lock=0;
+  function on(i){
+    chips.forEach(function(c,k){ c.classList.toggle('on', k===i); });
+    var a=chips[i]; if(!a) return;
+    var r=a.getBoundingClientRect(), br=bar.getBoundingClientRect();
+    if(r.left<br.left+8||r.right>br.right-8){ a.scrollIntoView({block:'nearest',inline:'center'}); }
+  }
+  chips.forEach(function(c,i){ c.addEventListener('click', function(){ lock=Date.now(); on(i); }); });
+  var tick=function(){
+    if(Date.now()-lock<800) return;
+    var y=bar.getBoundingClientRect().bottom+8, best=0;
+    groups.forEach(function(g,i){ if(g && g.getBoundingClientRect().top<=y) best=i; });
+    on(best);
+  };
+  var last=0;
+  window.addEventListener('scroll', function(){ var t=Date.now(); if(t-last<60) return; last=t; tick(); }, {passive:true});
+  window.addEventListener('load', tick);
+  tick();
 })();
 </script>
 </body>
