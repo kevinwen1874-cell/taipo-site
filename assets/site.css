@@ -116,6 +116,25 @@ h1 em{font-style:normal;color:var(--red)}
 .hdots{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:center;gap:5px;z-index:2}
 .hdots button{width:14px;height:3px;border:0;border-radius:2px;background:rgba(26,22,20,.2);padding:0;cursor:pointer;transition:.22s}
 .hdots button.on{background:var(--red);width:20px}
+
+/* ---------- 首屏整體放大（僅桌面 ≥1081） ---------- */
+@media (min-width:1081px){
+  .hero{padding:78px 0 0}
+  .hero .wrap{gap:24px;padding-bottom:70px}
+  .eyebrow{font-size:13px;margin-bottom:29px}
+  .hero h1{font-size:66px}
+  .claim span{font-size:40px}
+  .hero p.lead{font-size:16.5px;max-width:616px;margin-top:26px}
+  .cta{margin-top:42px;gap:16px}
+  .hero .btn{padding:17px 33px;font-size:15px}
+  .cta-sub{margin-top:15px}
+  .cta-sub a{padding:9px 19px;font-size:12.5px}
+  .brandline{gap:33px;margin-bottom:18px}
+  .hero .side img.sign{width:170px}
+  .hero .side img.bbm{width:145px}
+  .hero .side img.wanxia{width:315px}
+  .hslide{width:315px}
+}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
 /* ---------- 事實條 ---------- */
