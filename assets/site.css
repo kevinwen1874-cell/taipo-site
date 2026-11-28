@@ -422,6 +422,14 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
 .tl .yr{font-size:var(--fs-lg);letter-spacing:-.01em;color:var(--red);line-height:1.5}
 .tl h3{font-size:var(--fs-md);font-weight:600;line-height:1.6}
 .tl p{font-size:var(--fs-sm);color:var(--ink-2);margin-top:9px;line-height:1.95;max-width:780px}
+.tl-fig{float:right;max-width:320px;margin:6px 0 18px 40px}
+.tl-fig.tall{max-width:220px}
+.tl-fig img{display:block;width:100%;height:auto;border:1px solid var(--line);background:#fff;padding:8px}
+.tl-fig figcaption{margin-top:10px;font-size:var(--fs-xs);color:var(--muted);line-height:1.7}
+@media (max-width:680px){
+  .tl-fig{float:none;max-width:100%;margin:20px 0 2px}
+  .tl-fig.tall{max-width:78%}
+}
 
 /* 理念引句 */
 .creed{border-left:2px solid var(--red);padding:6px 0 6px 28px;margin:0;max-width:760px}
@@ -449,4 +457,88 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .store{padding:24px 22px}
   .creed{padding-left:18px}
   .creed p{font-size:var(--fs-md)}
+}
+
+/* ---------- 批發查詢（wholesale.html） ---------- */
+.wbar{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin-bottom:26px}
+.wbar li{display:flex;align-items:center;gap:10px;padding:9px 18px 9px 9px;border:1px solid var(--line);border-radius:100px;background:var(--paper);font-size:var(--fs-sm);color:var(--muted)}
+.wbar li b{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--line);color:var(--muted);font-size:var(--fs-xs);font-weight:600}
+.wbar li.on{border-color:var(--ink);color:var(--ink)}
+.wbar li.on b{background:var(--ink);color:#FBF8F2}
+
+.wcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:44px 46px 40px;scroll-margin-top:110px}
+.wt{font-size:var(--fs-lg);line-height:1.4}
+.wt-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wnote{font-size:var(--fs-sm);color:var(--muted);margin-top:10px;line-height:1.85}
+.wpane{display:none}
+.wpane.on{display:block}
+
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;margin-top:26px}
+.field{display:flex;flex-direction:column}
+.field.full{grid-column:1/-1}
+.field label{font-size:var(--fs-xs);letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+.field .opt{opacity:.55;margin-left:8px;letter-spacing:0}
+.field input{font:inherit;font-size:var(--fs-sm);color:var(--ink);background:var(--paper);border:1px solid #DCD3C4;border-radius:10px;padding:13px 15px;transition:border-color .18s,background .18s}
+.field input:focus{outline:none;border-color:var(--ink);background:#fff}
+.field input.bad{border-color:var(--red);background:#FDF5F4}
+.err{display:block;font-size:var(--fs-xs);color:var(--red);line-height:1.5;margin-top:6px}
+.err:empty{display:none}
+
+.wchk{display:flex;align-items:flex-start;gap:12px;margin-top:24px;font-size:var(--fs-sm);color:var(--ink-2);line-height:1.75;cursor:pointer}
+.wchk input{width:18px;height:18px;margin-top:4px;flex:0 0 auto;accent-color:var(--red)}
+
+.wact{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+.wcount{font-size:var(--fs-xs);color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:5px 13px;white-space:nowrap}
+.wcount.has{background:var(--ink);border-color:var(--ink);color:#FBF8F2}
+
+.wsearch{display:flex;align-items:center;gap:10px;margin-top:22px;padding:11px 15px;border:1px solid #DCD3C4;border-radius:10px;background:var(--paper)}
+.wsearch svg{width:16px;height:16px;flex:0 0 auto;color:var(--muted)}
+.wsearch input{flex:1;border:0;background:none;font:inherit;font-size:var(--fs-sm);color:var(--ink);outline:none}
+
+.wgroups{margin-top:20px;border-top:1px solid var(--line)}
+.wgroup{border-bottom:1px solid var(--line)}
+.wgroup summary{display:flex;align-items:center;gap:12px;padding:16px 2px;cursor:pointer;list-style:none;font-size:var(--fs-md);font-weight:600}
+.wgroup summary::-webkit-details-marker{display:none}
+.wgroup summary .gn{margin-left:auto;font-size:var(--fs-xs);font-weight:400;color:var(--muted)}
+.wgroup summary::after{content:'＋';font-size:15px;color:var(--muted);line-height:1}
+.wgroup[open] summary::after{content:'−'}
+.chips{display:flex;flex-wrap:wrap;gap:10px;padding:2px 0 22px}
+.chip{position:relative;display:inline-flex;cursor:pointer}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:inline-block;padding:8px 15px;border:1px solid #DCD3C4;border-radius:100px;background:#fff;font-size:var(--fs-sm);color:var(--ink-2);transition:.16s}
+.chip:hover span{border-color:var(--ink)}
+.chip input:checked + span{background:var(--ink);border-color:var(--ink);color:#FBF8F2}
+.chip input:focus-visible + span{outline:2px solid var(--orange);outline-offset:2px}
+
+.wconf{margin-top:24px;border-top:1px solid var(--line)}
+.wblock{padding:22px 0;border-bottom:1px solid var(--line)}
+.wblock:last-child{border-bottom:0}
+.wblock h3{font-size:var(--fs-xs);letter-spacing:.14em;color:var(--muted);font-weight:600;margin-bottom:12px}
+.wblock h3 em{font-style:normal;color:var(--ink);margin-left:8px;letter-spacing:0}
+.wblock p{display:flex;gap:16px;font-size:var(--fs-sm);padding:5px 0}
+.wblock p span{flex:0 0 auto;min-width:96px;color:var(--muted)}
+.wblock p b{font-weight:500;word-break:break-word}
+.wblock .plist{display:block;line-height:1.95;color:var(--ink)}
+
+.wdone{text-align:center;padding:18px 0 4px}
+.wmark{width:64px;height:64px;margin:0 auto 22px;border-radius:50%;background:var(--orange);color:#2A1E0B;display:grid;place-items:center}
+.wmark svg{width:26px;height:26px}
+.wdone p{font-size:var(--fs-sm);color:var(--muted);margin-top:12px;line-height:1.9}
+.wdone-act{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px}
+
+@media (max-width:1080px){
+  .wcard{padding:34px 30px 30px}
+}
+@media (max-width:680px){
+  .wcard{padding:26px 20px 24px}
+  .wgrid{grid-template-columns:1fr;gap:18px}
+  .wbar{gap:8px}
+  .wbar li{padding:8px 14px 8px 8px;font-size:var(--fs-xs)}
+  .wbar li b{width:22px;height:22px}
+  .wgroup summary{font-size:var(--fs-sm)}
+  .wconf .wblock p{flex-direction:column;gap:2px}
+  .wblock p span{min-width:0}
+  .wact .btn{flex:1 1 45%;justify-content:center}
+  .wact>span{display:none}
 }

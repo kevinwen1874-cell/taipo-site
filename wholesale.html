@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>批發查詢 · 大埔振興丸</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap"><span>香港製造 · 零添加 · 始創一九六七</span><span class="lang"><b>繁</b><span>简</span><span>EN</span></span></div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="assets/logo_official.png" alt="大埔振興丸"></a>
+    <nav><a href="index.html">首頁</a><a href="products.html">全部產品</a><a href="index.html#wanxia">丸俠</a><a href="index.html#service">在家食譜</a><a href="index.html#service">開心片段</a></nav>
+    <div class="act">
+      <label class="search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+        <input placeholder="搜尋產品">
+      </label>
+      <a href="index.html#member" class="btn-member">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.3-4 4-6 7.5-6s6.2 2 7.5 6"/></svg>
+        會員登入
+      </a>
+      <a href="#" class="cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5h2.2l2.3 11h10.2l2-8H6.2"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17.5" cy="19.5" r="1.4"/></svg><span class="n">0</span></a>
+      <button class="mbtn" id="mBtn" aria-label="選單" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mNav">
+  <a href="index.html">首頁</a>
+  <a href="products.html">全部產品</a>
+  <a href="index.html#wanxia">丸俠</a>
+  <a href="index.html#products">選購產品</a>
+  <a href="delivery.html">送貨與自取</a>
+  <a href="about.html">品牌故事</a>
+  <a href="wholesale.html">批發查詢</a>
+  <div class="mcta"><a href="index.html#products">選購產品</a><a href="index.html#member">會員登入</a></div>
+  <div class="mfoot">香港製造 · 零添加 · 始創一九六七</div>
+</div>
+
+<div class="pagehd">
+  <div class="wrap">
+    <div class="t">批發 · INQUIRY</div>
+    <h1>批發查詢</h1>
+    <p>歡迎香港本地餐飲業客戶或商業客戶查詢批發報價（送貨只限香港）。請填寫資料，我們會喺 24–48 小時內審核並提供專屬報價。</p>
+  </div>
+</div>
+
+<section class="blk" style="padding:64px 0 0">
+  <div class="wrap">
+
+    <ol class="wbar" id="wbar">
+      <li class="on"><b>1</b><span>客戶資料</span></li>
+      <li><b>2</b><span>選擇產品</span></li>
+      <li><b>3</b><span>確認提交</span></li>
+    </ol>
+
+    <form class="wcard" id="wform" novalidate>
+
+      <!-- 步驟 1 -->
+      <div class="wpane on" data-step="1">
+        <h2 class="wt">客戶資料</h2>
+        <p class="wnote">送貨只限香港。所有欄位均為必填。</p>
+        <div class="wgrid">
+          <div class="field">
+            <label for="companyName">店鋪／公司名稱</label>
+            <input id="companyName" name="companyName" type="text" placeholder="例如：振興茶餐廳" maxlength="200" required>
+            <em class="err"></em>
+          </div>
+          <div class="field">
+            <label for="contactName">聯絡人姓名</label>
+            <input id="contactName" name="contactName" type="text" placeholder="例如：陳先生" maxlength="200" required>
+            <em class="err"></em>
+          </div>
+          <div class="field">
+            <label for="phone">電話</label>
+            <input id="phone" name="phone" type="tel" placeholder="例如：29470447" maxlength="50" required>
+            <em class="err"></em>
+          </div>
+          <div class="field">
+            <label for="email">電郵</label>
+            <input id="email" name="email" type="email" placeholder="example@example.com" maxlength="200" required>
+            <em class="err"></em>
+          </div>
+          <div class="field full">
+            <label for="address">店鋪地址</label>
+            <input id="address" name="address" type="text" placeholder="請輸入店鋪地址" maxlength="500" required>
+            <em class="err"></em>
+          </div>
+        </div>
+        <label class="wchk">
+          <input type="checkbox" id="confirmHK" required>
+          <span>本人確認為香港餐飲業客戶或商業客戶，所提供資料真實無誤。</span>
+        </label>
+        <em class="err" id="chkErr"></em>
+        <div class="wact">
+          <span></span>
+          <button type="button" class="btn btn-solid" data-next>下一步</button>
+        </div>
+      </div>
+
+      <!-- 步驟 2 -->
+      <div class="wpane" data-step="2">
+        <div class="wt-row">
+          <h2 class="wt">選擇感興趣的產品</h2>
+          <span class="wcount" id="wcount">已選 0 項</span>
+        </div>
+        <p class="wnote">可多選，唔選都得——銷售部會按你嘅菜單再建議。</p>
+
+        <label class="wsearch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+          <input id="wsearch" type="text" placeholder="搜尋產品名稱…">
+        </label>
+
+        <div class="wgroups" id="wgroups"></div>
+
+        <div class="wgrid" style="margin-top:30px">
+          <div class="field">
+            <label for="qty">預計訂購量<span class="opt">選填</span></label>
+            <input id="qty" type="text" placeholder="例如：每週 20 包" maxlength="200">
+          </div>
+          <div class="field">
+            <label for="req">特別要求<span class="opt">選填</span></label>
+            <input id="req" type="text" placeholder="例如：需要 250g 小包裝" maxlength="300">
+          </div>
+        </div>
+
+        <div class="wact">
+          <button type="button" class="btn btn-ghost" data-prev>上一步</button>
+          <button type="button" class="btn btn-solid" data-next>下一步</button>
+        </div>
+      </div>
+
+      <!-- 步驟 3 -->
+      <div class="wpane" data-step="3">
+        <h2 class="wt">確認資料</h2>
+        <div class="wconf" id="wconf"></div>
+        <p class="wnote" style="margin-top:22px">提交後，大埔振興銷售部會喺 24–48 小時內審核並聯絡你。本頁提交會開啟你電腦／手機上嘅郵件程式，將以上資料寄去 enquiry@beefball.com.hk。</p>
+        <div class="wact">
+          <button type="button" class="btn btn-ghost" data-prev>上一步</button>
+          <button type="button" class="btn btn-solid" id="wsubmit">確認提交</button>
+        </div>
+      </div>
+
+      <!-- 完成 -->
+      <div class="wpane wdone" data-step="4" id="wdone">
+        <div class="wmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5l5 5 11-11"/></svg></div>
+        <h2 class="wt">已準備好你嘅查詢</h2>
+        <p>郵件程式應該已經彈出。如果冇彈，可以按下面複製內容，直接用電郵或 WhatsApp 傳給我們。</p>
+        <div class="wdone-act">
+          <button type="button" class="btn btn-solid" id="wcopy">複製查詢內容</button>
+          <a class="btn btn-ghost" href="mailto:enquiry@beefball.com.hk">再開一次郵件</a>
+        </div>
+        <p class="wnote" style="margin-top:18px">急單可直接致電 <a href="tel:29470447" style="border-bottom:1px solid var(--ink)">2947 0447</a>，星期一至六 09:00–18:00。</p>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="brand">
+        <img src="assets/logo_official.png" alt="大埔振興丸">
+        <p>大埔振興有限公司<br>始創於一九六七年<br>香港製造 · 零添加 · 不含防腐劑</p>
+        <div class="contact">
+          <a href="tel:29470447"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 006 6l1.5-2 4 1.5v3a2 2 0 01-2.2 2A17.5 17.5 0 014.5 5.7 2 2 0 016.5 3.5z"/></svg><span>29470447</span></a>
+          <a href="mailto:enquiry@beefball.com.hk"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg><span>enquiry@beefball.com.hk</span></a>
+          <span><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><span>香港火炭黃竹洋街 15-21 號華聯工業中心 B 座 14 樓 15 室</span></span>
+        </div>
+      </div>
+      <div><h4>客戶服務</h4><a href="delivery.html">送貨安排</a><a href="delivery.html">自取需知</a><a href="tel:29470447">聯絡我們</a><a href="about.html#stores">門市自取</a></div>
+      <div><h4>關於</h4><a href="index.html#wanxia">丸俠</a><a href="about.html">品牌故事</a><a href="about.html#stores">門店地址</a><a href="wholesale.html">批發查詢</a></div>
+    </div>
+    <div class="fbot"><span>© 2026 大埔振興有限公司　版權所有</span><span>私隱政策　·　條款及細則</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('mBtn'), m=document.getElementById('mNav');
+  if(!b||!m) return;
+  function close(){ b.classList.remove('on'); m.classList.remove('on'); b.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  b.addEventListener('click', function(){
+    var on = m.classList.toggle('on');
+    b.classList.toggle('on', on);
+    b.setAttribute('aria-expanded', on?'true':'false');
+    document.body.style.overflow = on?'hidden':'';
+  });
+  m.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+  window.addEventListener('resize', function(){ if(window.innerWidth>1080) close(); });
+})();
+</script>
+
+<script>
+(function(){
+  /* ===== 產品資料（與 products.html 八品類一致，同名 SKU 只列一次） ===== */
+  var CATS = [
+    ['牛肉丸', ['爆漿咖喱牛丸','爆漿酸菜牛丸','澳洲和牛牛丸','牛骨濃汁牛丸','陳皮牛丸','金牌(大)牛筋丸','QQ黑椒濃汁牛丸','潮汕濃汁牛丸','20g黑椒濃汁牛丸','QQ牛骨濃汁牛丸','生酮牛丸','金牌(大)牛肉丸','(大)黑椒牛丸','川辣牛丸','零添加黑椒牛丸','零添加（大）牛筋丸','QQ 金牌牛筋丸','辛辣牛丸','爆漿芫茜皮蛋牛丸','爆漿麻辣芫茜皮蛋牛丸']],
+    ['豬肉丸／貢丸', ['豬骨濃汁貢丸','QQ黑椒豬肉丸','羽衣甘藍貢丸','香菇貢丸','健康豬肉丸','三星蔥醬爆貢丸','豬肉丸','QQ 豬肉丸','胡椒豬肚貢丸','薑汁皮旦貢丸','松露香菇貢丸']],
+    ['魚丸', ['金牌墨魚丸','福州魚丸','芥末魚丸','粒粒墨魚丸','仿龍蝦丸','爽YY魚蛋']],
+    ['包心丸', ['蟹粉包心墨魚丸','港式沙爹包心牛丸','芥末沙律球','炙燒芝心丸','魚籽包心丸','芋泥包心貢丸','芝士包心丸','仿海膽包心丸','岩漿海苔丸']],
+    ['清真丸', ['清真牛筋丸','清真墨魚丸']],
+    ['餃子', ['大埔振興鳳城水餃','大埔振興廣東雲吞','芫茜和牛餃子','澳洲和牛餃子','沙嗲和牛餃子','大埔振興韮菜豬肉餃','大埔振興白菜豬肉餃','魚皮餃']],
+    ['火鍋食材', ['魚蓉燒賣','花枝滑','濃芝豆腐燒','魚豆腐','鮮味炸魚角','魷魚燒','豆卜魚腐','魚腐竹卷','鮮蝦腐皮卷','黃金蝦仁棗','流心芝士雞肉腸','醬爆咖喱炸蛋','黃金炸蛋']],
+    ['套餐', ['雙濃出招','牛骨兄弟套餐','升級必食2K套餐','特選推介','喱三寶套餐','精選火鍋套餐']]
+  ];
+
+  var groups = document.getElementById('wgroups');
+  CATS.forEach(function(cat, idx){
+    var d = document.createElement('details');
+    d.className = 'wgroup';
+    if(idx === 0) d.open = true;
+    var items = cat[1].map(function(n){
+      return '<label class="chip"><input type="checkbox" value="' + n + '"><span>' + n + '</span></label>';
+    }).join('');
+    d.innerHTML = '<summary><span class="gname">' + cat[0] + '</span><span class="gn">' + cat[1].length + ' 款</span></summary><div class="chips">' + items + '</div>';
+    groups.appendChild(d);
+  });
+
+  var panes = [].slice.call(document.querySelectorAll('.wpane'));
+  var dots  = [].slice.call(document.querySelectorAll('#wbar li'));
+  var cur = 1;
+
+  function go(n){
+    cur = n;
+    panes.forEach(function(p){ p.classList.toggle('on', +p.dataset.step === n); });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i < Math.min(n,3)); d.classList.toggle('cur', i === n-1); });
+    if(n === 3) fillConf();
+    document.querySelector('.wcard').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function err(input, msg){
+    var e = input.parentNode.querySelector('.err');
+    if(e) e.textContent = msg || '';
+    input.classList.toggle('bad', !!msg);
+    return !msg;
+  }
+
+  function validate1(){
+    var ok = true;
+    var f = ['companyName','contactName','phone','email','address'];
+    f.forEach(function(id){
+      var el = document.getElementById(id), v = el.value.trim(), m = '';
+      if(!v) m = '請填寫此欄';
+      else if(id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) m = '電郵格式不正確';
+      else if(id === 'phone' && v.replace(/\D/g,'').length < 8) m = '請填寫 8 位電話';
+      if(!err(el, m)) ok = false;
+    });
+    var c = document.getElementById('confirmHK');
+    var ce = document.getElementById('chkErr');
+    if(!c.checked){ ce.textContent = '請確認你是香港餐飲業或商業客戶'; ok = false; }
+    else ce.textContent = '';
+    return ok;
+  }
+
+  document.querySelectorAll('[data-next]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(cur === 1 && !validate1()) return;
+      go(cur + 1);
+    });
+  });
+  document.querySelectorAll('[data-prev]').forEach(function(btn){
+    btn.addEventListener('click', function(){ go(cur - 1); });
+  });
+
+  /* 已選數量 */
+  var count = document.getElementById('wcount');
+  function picked(){
+    return [].slice.call(groups.querySelectorAll('input:checked')).map(function(i){ return i.value; });
+  }
+  groups.addEventListener('change', function(){
+    var n = picked().length;
+    count.textContent = '已選 ' + n + ' 項';
+    count.classList.toggle('has', n > 0);
+  });
+
+  /* 搜尋 */
+  document.getElementById('wsearch').addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    groups.querySelectorAll('.wgroup').forEach(function(g){
+      var hit = 0;
+      g.querySelectorAll('.chip').forEach(function(c){
+        var m = !q || c.textContent.toLowerCase().indexOf(q) > -1;
+        c.style.display = m ? '' : 'none';
+        if(m) hit++;
+      });
+      g.style.display = hit ? '' : 'none';
+      if(q && hit) g.open = true;
+    });
+  });
+
+  function data(){
+    return {
+      company: document.getElementById('companyName').value.trim(),
+      contact: document.getElementById('contactName').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      address: document.getElementById('address').value.trim(),
+      products: picked(),
+      qty: document.getElementById('qty').value.trim(),
+      req: document.getElementById('req').value.trim()
+    };
+  }
+
+  function fillConf(){
+    var d = data();
+    var rows = [
+      ['公司名稱', d.company], ['聯絡人', d.contact], ['電話', d.phone],
+      ['電郵', d.email], ['店鋪地址', d.address]
+    ];
+    var html = '<div class="wblock"><h3>客戶資料</h3>';
+    rows.forEach(function(r){ html += '<p><span>' + r[0] + '</span><b>' + (r[1] || '—') + '</b></p>'; });
+    html += '</div><div class="wblock"><h3>選擇產品 <em>' + d.products.length + ' 項</em></h3>';
+    html += d.products.length ? '<p class="plist">' + d.products.join('、') + '</p>' : '<p class="plist">未選擇（由銷售部建議）</p>';
+    if(d.qty) html += '<p><span>預計訂購量</span><b>' + d.qty + '</b></p>';
+    if(d.req) html += '<p><span>特別要求</span><b>' + d.req + '</b></p>';
+    html += '</div>';
+    document.getElementById('wconf').innerHTML = html;
+  }
+
+  function text(){
+    var d = data();
+    var L = [];
+    L.push('【批發查詢】');
+    L.push('公司／店鋪：' + d.company);
+    L.push('聯絡人：' + d.contact);
+    L.push('電話：' + d.phone);
+    L.push('電郵：' + d.email);
+    L.push('店鋪地址：' + d.address);
+    L.push('');
+    L.push('有意產品（' + d.products.length + ' 項）：');
+    if(d.products.length) d.products.forEach(function(p){ L.push('· ' + p); });
+    else L.push('· 未指定，請提供建議');
+    L.push('');
+    if(d.qty) L.push('預計訂購量：' + d.qty);
+    if(d.req) L.push('特別要求：' + d.req);
+    L.push('');
+    L.push('（由官網批發查詢表單提交）');
+    return L.join('\n');
+  }
+
+  document.getElementById('wsubmit').addEventListener('click', function(){
+    var d = data();
+    var url = 'mailto:enquiry@beefball.com.hk?subject=' + encodeURIComponent('批發查詢 — ' + d.company) + '&body=' + encodeURIComponent(text());
+    window.location.href = url;
+    go(4);
+  });
+
+  document.getElementById('wcopy').addEventListener('click', function(){
+    var btn = this;
+    navigator.clipboard.writeText(text()).then(function(){
+      btn.textContent = '已複製';
+      setTimeout(function(){ btn.textContent = '複製查詢內容'; }, 1800);
+    }).catch(function(){
+      btn.textContent = '複製失敗，請長按選取';
+    });
+  });
+})();
+</script>
+</body>
+</html>
