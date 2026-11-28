@@ -54,7 +54,6 @@
   <div class="mfoot">香港製造 · 零添加 · 始創一九六七</div>
 </div>
 
-
 <!-- HERO -->
 <section class="hero">
   <div class="deco"></div><div class="deco2"></div>
@@ -84,27 +83,17 @@
         <img class="bbm" src="assets/logo_bbm.png" alt="丸俠 Beef Ball Man">
       </div>
       <img class="wanxia" src="assets/wanxia_hero.png" alt="丸俠">
-    </div>
-  </div>
-</section>
-
-<!-- 活動輪播 -->
-<section class="pslider" aria-label="現行活動">
-  <div class="wrap">
-    <div class="pswrap">
-      <div class="pslides" id="pslides">
-        <div class="pslide" role="group" aria-label="活動圖 1"></div>
-        <div class="pslide" role="group" aria-label="活動圖 2"></div>
-        <div class="pslide" role="group" aria-label="活動圖 3"></div>
+      <div class="hslide" aria-label="現行活動輪播">
+        <div class="htrack" id="hTrack">
+          <div class="hcell"></div>
+          <div class="hcell"></div>
+          <div class="hcell"></div>
+        </div>
+        <button class="hnav p" id="hPrev" aria-label="上一張"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="hnav n" id="hNext" aria-label="下一張"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="hdots" id="hDots"></div>
       </div>
-      <button class="psnav prev" id="psPrev" aria-label="上一張">
-        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
-      </button>
-      <button class="psnav next" id="psNext" aria-label="下一張">
-        <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-      </button>
     </div>
-    <div class="psdots" id="psDots"></div>
   </div>
 </section>
 
@@ -320,7 +309,7 @@ document.querySelectorAll('.rise').forEach(function(el,i){
 
 <script>
 (function(){
-  var track=document.getElementById('pslides'), dots=document.getElementById('psDots');
+  var track=document.getElementById('hTrack'), dots=document.getElementById('hDots');
   if(!track) return;
   var n=track.children.length, i=0, timer=null;
   for(var k=0;k<n;k++){
@@ -331,12 +320,12 @@ document.querySelectorAll('.rise').forEach(function(el,i){
   }
   function paint(){
     track.style.transform='translateX(-'+(i*100)+'%)';
-    for(var k=0;k<n;k++) dots.children[k].className = (k===i?'on':'');
+    for(var k=0;k<n;k++) dots.children[k].className=(k===i?'on':'');
   }
   function go(x){ i=(x+n)%n; paint(); }
-  function rest(){ clearInterval(timer); if(n>1) timer=setInterval(function(){ go(i+1); }, 5000); }
-  document.getElementById('psPrev').addEventListener('click', function(){ go(i-1); rest(); });
-  document.getElementById('psNext').addEventListener('click', function(){ go(i+1); rest(); });
+  function rest(){ clearInterval(timer); if(n>1) timer=setInterval(function(){ go(i+1); }, 4500); }
+  document.getElementById('hPrev').addEventListener('click', function(){ go(i-1); rest(); });
+  document.getElementById('hNext').addEventListener('click', function(){ go(i+1); rest(); });
   var box=track.parentNode;
   box.addEventListener('mouseenter', function(){ clearInterval(timer); });
   box.addEventListener('mouseleave', rest);
