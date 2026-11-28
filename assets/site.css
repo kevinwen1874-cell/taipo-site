@@ -588,7 +588,7 @@ a.pcard{display:flex;color:inherit}
 
 .pdgrid{display:grid;grid-template-columns:1.02fr .98fr;gap:62px;align-items:start;padding:26px 0 70px}
 
-.pdimg{position:sticky;top:104px;background:#fff;border:1px solid var(--line);border-radius:var(--r);aspect-ratio:1/1;display:grid;place-items:center;padding:26px;overflow:hidden}
+.pdimg{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);aspect-ratio:1/1;display:grid;place-items:center;padding:26px;overflow:hidden}
 .pdimg img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 
 .pdflags{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
@@ -650,7 +650,7 @@ a.pcard{display:flex;color:inherit}
 
 @media (max-width:980px){
   .pdgrid{grid-template-columns:1fr;gap:34px;padding-bottom:52px}
-  .pdimg{position:static;padding:18px}
+  .pdimg{padding:18px}
   .pdname{font-size:var(--fs-2xl)}
 }
 @media (max-width:680px){
