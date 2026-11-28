@@ -188,7 +188,7 @@ section.blk{padding:104px 0}
 
 /* ---------- FOOTER ---------- */
 footer{padding:80px 0 34px;border-top:1px solid var(--line)}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
 .fgrid .brand img{height:58px;margin-bottom:18px}
 .fgrid .brand p{font-size:var(--fs-sm);color:var(--muted);max-width:250px;line-height:1.9}
 .fgrid h4{font-size:var(--fs-xs);letter-spacing:.22em;color:var(--muted);margin-bottom:16px;font-weight:400}
@@ -212,7 +212,7 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .grid{grid-template-columns:repeat(2,1fr)}
   .wanxia-sec .wrap{grid-template-columns:1fr;gap:40px}
   .member .wrap{grid-template-columns:1fr;gap:38px}
-  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1.4fr 1fr 1fr;gap:32px}
   nav{display:none}
 }
 @media (max-width:680px){
