@@ -23,6 +23,7 @@
   --fs-display:59px; /* h1 桌面 */
 }
 *{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{
   font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC","Helvetica Neue",Arial,sans-serif;
@@ -523,4 +524,55 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .wblock p span{min-width:0}
   .wact .btn{flex:1 1 45%;justify-content:center}
   .wact>span{display:none}
+}
+
+/* ---------- 會員註冊 ---------- */
+.regwrap{display:grid;grid-template-columns:1.6fr .85fr;gap:48px;align-items:start}
+.regside{display:flex;flex-direction:column;gap:20px;position:sticky;top:100px}
+.regcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 26px 24px}
+.regcard .t{font-size:var(--fs-xs);letter-spacing:.22em;color:var(--red);margin-bottom:16px}
+.regcard ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.regcard li{display:flex;gap:12px;align-items:baseline;font-size:var(--fs-sm);color:var(--ink-2);line-height:1.7}
+.regcard li b{font-size:var(--fs-md);color:var(--ink);flex:0 0 46px;line-height:1.4}
+.regcard p{font-size:var(--fs-sm);color:var(--muted);line-height:1.9}
+.regline{margin-top:10px}
+.regline a{border-bottom:1px solid var(--line);color:var(--ink);padding-bottom:2px}
+
+.warnbar{background:#FBF3E6;border-left:3px solid var(--gold);padding:14px 18px;border-radius:0 10px 10px 0;font-size:var(--fs-xs);color:var(--ink-2);line-height:1.85;margin-bottom:32px}
+.warnbar b{display:block;font-weight:600;color:var(--ink);margin-bottom:4px;letter-spacing:.08em}
+
+.field select{font:inherit;font-size:var(--fs-sm);color:var(--ink);background:var(--paper);border:1px solid #DCD3C4;border-radius:10px;padding:13px 40px 13px 15px;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236E645A' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;transition:border-color .18s,background-color .18s}
+.field select:focus{outline:none;border-color:var(--ink);background-color:#fff}
+.field select.bad{border-color:var(--red);background-color:#FDF5F4}
+
+.vrow{display:flex;gap:10px}
+.vrow input{flex:1;min-width:0}
+.vbtn{flex:0 0 auto;padding:0 15px;border:1px solid var(--ink);border-radius:10px;background:#fff;font:inherit;font-size:var(--fs-xs);letter-spacing:.04em;color:var(--ink);cursor:pointer;transition:.2s}
+.vbtn:hover{background:var(--ink);color:#FBF8F2}
+.vbtn:disabled{background:var(--paper);border-color:var(--line);color:var(--muted);cursor:default}
+.vmsg{display:block;font-size:var(--fs-xs);color:var(--gold);line-height:1.65;margin-top:7px}
+.vmsg:empty{display:none}
+
+.agree{margin-top:30px;border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow:hidden}
+.agree summary{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 18px;font-size:var(--fs-sm);color:var(--ink);cursor:pointer;list-style:none}
+.agree summary::-webkit-details-marker{display:none}
+.agree summary span{font-size:var(--fs-xs);color:var(--muted);white-space:nowrap}
+.agree summary span::after{content:'＋'}
+.agree[open] summary span::after{content:'−'}
+.agree-body{padding:0 18px 18px;border-top:1px solid var(--line)}
+.agree-body p{font-size:var(--fs-xs);color:var(--muted);line-height:1.95;margin-top:14px}
+
+.wact .wact-login{font-size:var(--fs-sm);color:var(--muted)}
+
+@media (max-width:1080px){
+  .regwrap{grid-template-columns:1fr;gap:36px}
+  .regside{position:static;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+}
+@media (max-width:680px){
+  .regside{grid-template-columns:1fr}
+  .vrow{flex-direction:column}
+  .vbtn{padding:12px 16px}
+  #regForm .wact{flex-direction:column;align-items:stretch}
+  #regForm .wact .wact-login{display:block;order:-1;margin-bottom:14px}
+  #regForm .wact .btn{width:100%;justify-content:center}
 }

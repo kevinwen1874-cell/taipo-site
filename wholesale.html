@@ -21,7 +21,7 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
         <input placeholder="搜尋產品">
       </label>
-      <a href="index.html#member" class="btn-member">
+      <a href="register.html" class="btn-member">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.3-4 4-6 7.5-6s6.2 2 7.5 6"/></svg>
         會員登入
       </a>
@@ -150,10 +150,10 @@
       <div class="wpane wdone" data-step="4" id="wdone">
         <div class="wmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12.5l5 5 11-11"/></svg></div>
         <h2 class="wt">已準備好你嘅查詢</h2>
-        <p>郵件程式應該已經彈出。如果冇彈，可以按下面複製內容，直接用電郵或 WhatsApp 傳給我們。</p>
+        <p>查詢內容已經複製到你嘅剪貼板，貼落電郵或 WhatsApp 傳給我們就可以。</p>
         <div class="wdone-act">
           <button type="button" class="btn btn-solid" id="wcopy">複製查詢內容</button>
-          <a class="btn btn-ghost" href="mailto:enquiry@beefball.com.hk">再開一次郵件</a>
+          <a class="btn btn-ghost" id="wmail" href="mailto:enquiry@beefball.com.hk">用電郵傳送</a>
         </div>
         <p class="wnote" style="margin-top:18px">急單可直接致電 <a href="tel:29470447" style="border-bottom:1px solid var(--ink)">2947 0447</a>，星期一至六 09:00–18:00。</p>
       </div>
@@ -347,9 +347,11 @@
   }
 
   document.getElementById('wsubmit').addEventListener('click', function(){
-    var d = data();
-    var url = 'mailto:enquiry@beefball.com.hk?subject=' + encodeURIComponent('批發查詢 — ' + d.company) + '&body=' + encodeURIComponent(text());
-    window.location.href = url;
+    var d = data(), body = text();
+    try { navigator.clipboard.writeText(body); } catch(err){}
+    document.getElementById('wmail').href =
+      'mailto:enquiry@beefball.com.hk?subject=' + encodeURIComponent('批發查詢 — ' + d.company) +
+      '&body=' + encodeURIComponent(body);
     go(4);
   });
 
