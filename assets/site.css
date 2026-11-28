@@ -53,6 +53,11 @@ nav a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;b
 nav a:hover::after{width:100%}
 nav a.on{color:var(--ink);font-weight:600}
 nav a.on::after{width:100%;background:var(--ink)}
+/* 線下門店（暫跳 OpenRice） */
+nav a.nav-hot{align-self:center;flex:none;font-size:var(--fs-xs);letter-spacing:.04em;line-height:1;padding:7px 12px;border-radius:100px;background:var(--red);color:#FBF8F2;white-space:nowrap;transition:background .22s,transform .22s}
+nav a.nav-hot::after{content:none}
+nav a.nav-hot:hover{background:var(--red-d);color:#FBF8F2;transform:translateY(-1px)}
+.mnav a.mnav-hot{color:var(--red);font-weight:600}
 .act{margin-left:auto;display:flex;align-items:center;gap:20px}
 .search{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding:6px 2px;width:150px;color:var(--muted);transition:border-color .25s,width .25s}
 .search:focus-within{border-color:var(--ink);width:200px}
