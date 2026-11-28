@@ -146,23 +146,6 @@ section.blk{padding:104px 0}
 .go{width:40px;height:40px;border-radius:50%;border:1px solid #CFC5B4;display:grid;place-items:center;font-size:var(--fs-sm);line-height:1;transition:.22s}
 .card:hover .go{background:var(--ink);color:#FBF8F2;border-color:var(--ink)}
 
-/* ---------- 丸俠深色段 ---------- */
-.wanxia-sec{background:var(--ink);color:#F4EDE0;position:relative;overflow:hidden}
-.wanxia-sec::after{content:"";position:absolute;left:50%;bottom:-320px;width:900px;height:900px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(200,145,44,.16),rgba(200,145,44,0) 66%)}
-.wanxia-sec .wrap{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;z-index:1}
-.disc{position:relative;display:grid;place-items:center;aspect-ratio:1;max-width:400px}
-.disc .circle{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 40%,#FCF7EC,#EDE2CE)}
-.disc img{position:relative;width:100%;max-width:none;filter:drop-shadow(0 20px 26px rgba(0,0,0,.35))}
-.wanxia-sec .t{font-size:var(--fs-md);letter-spacing:.26em;color:var(--gold);margin-bottom:16px;font-weight:500}
-.wanxia-sec h2{font-size:var(--fs-2xl);line-height:1.38;font-weight:600}
-.wanxia-sec h2 em{font-style:normal;color:var(--gold)}
-.wanxia-sec p{color:#C7BDAC;font-size:var(--fs-sm);margin-top:20px;max-width:470px;line-height:1.95}
-.wanxia-sec .cta{margin-top:34px}
-.btn-gold{background:var(--gold);color:#2A1E0B}
-.btn-gold:hover{background:#DCA63C;transform:translateY(-2px)}
-.btn-line{border:1px solid #4A423A;color:#F4EDE0}
-.btn-line:hover{border-color:var(--gold);color:var(--gold)}
-
 /* ---------- 三欄服務 ---------- */
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
 .srv{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;transition:.28s}
@@ -213,7 +196,6 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .hero .side img.wanxia{width:420px}
   h1{font-size:var(--fs-3xl)}
   .grid{grid-template-columns:repeat(2,1fr)}
-  .wanxia-sec .wrap{grid-template-columns:1fr;gap:40px}
   .member .wrap{grid-template-columns:1fr;gap:38px}
   .fgrid{grid-template-columns:1.4fr 1fr 1fr;gap:32px}
   nav{display:none}
@@ -231,9 +213,6 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .search{width:110px}
 }
 
-
-/* ---------- 丸俠字標 ---------- */
-.bbm-lock{width:148px;margin-bottom:20px;display:block}
 
 /* ---------- 全部產品頁 ---------- */
 .catbar{position:sticky;top:78px;z-index:50;background:rgba(251,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -329,11 +308,6 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .card .tag{left:9px;top:9px;padding:4px 8px}
   .card-all{padding:22px 18px}
   .card-all .bot{flex-direction:column;align-items:flex-start;gap:6px}
-
-  .wanxia-sec .wrap{gap:26px}
-  .wanxia-sec p{margin-top:14px}
-  .disc{max-width:280px;margin:0 auto}
-  .bbm-lock{width:120px}
 
   .trio{grid-template-columns:1fr;gap:12px}
   .srv{padding:24px 22px}
