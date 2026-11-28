@@ -194,10 +194,9 @@ section.blk{padding:104px 0}
 .promo a:hover b{color:var(--red)}
 .panel .lk{margin-top:22px;font-size:var(--fs-sm);letter-spacing:.06em;color:var(--ink);display:inline-flex;gap:7px;align-items:center}
 .svc2.eq{grid-template-columns:repeat(2,1fr)}
-/* 活動卡 */
-.atag{display:inline-block;font-size:var(--fs-xs);letter-spacing:.14em;color:var(--red);border:1px solid rgba(180,35,31,.28);border-radius:999px;padding:3px 10px}
-.srv .atag{margin-bottom:14px}
-.srv .btn{margin-top:22px}
+/* 活動頁：預留位（等用戶提供推廣內容） */
+.pslots{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pslot{min-height:300px;border:1px dashed #DCD2C0;border-radius:var(--r);background:#fff}
 .btn-sm{padding:12px 22px;font-size:var(--fs-sm)}
 
 /* ---------- 會員 ---------- */
@@ -356,6 +355,8 @@ footer{padding:80px 0 34px;border-top:1px solid var(--line)}
   .card-all .bot{flex-direction:column;align-items:flex-start;gap:6px}
 
   .svc2,.svc2.eq{grid-template-columns:1fr;gap:14px}
+  .pslots{grid-template-columns:1fr}
+  .pslot{min-height:220px}
   .panel{padding:26px 22px}
   .ph-hd{padding-bottom:18px}
   .rcp .rrow{grid-template-columns:56px 1fr 16px;gap:13px}
